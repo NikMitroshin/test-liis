@@ -1,0 +1,230 @@
+.page-sign-up{
+    display: flex;
+  }
+  /* блок контент */
+  .signup-content{
+    width: 56%;
+    padding: 5% 8%;
+    box-sizing: border-box;
+  }
+  .box-logo{
+    margin-left: 8px;
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+  }
+  .box-logo__icon{
+    width: 30px;
+    margin-right: 15px;
+  }
+  .box-logo__img{
+    width: 100%;
+  }
+  .box-logo__text{
+    font-size: 15px;
+    color: #45236a;
+    letter-spacing: -0.03em;
+  }
+  .signup__title{
+    font-size: 31px;
+    font-weight: normal;
+    color: #45236a;
+    margin-bottom: 40px;
+  }
+  /* оформление формы  */
+  .box-form-name{
+    display: flex;
+    justify-content: space-between;
+  }
+  .box-form-name .input-field{
+    width: 45%;
+  }
+  .input-field{
+    width: 100%;
+  }
+  .input-field__label{
+    font-size: 13px;
+    color: #73716e;
+  }
+  .input-field__item{
+    border:none;
+    border-bottom: 1.2px solid #6da5b3;
+    width: 100%;
+    padding: 3px 5px;
+    box-sizing: border-box;
+    height: 26px;
+    margin: 20px 0;
+  }
+  .input-field__item:valid{
+    border-bottom: 2px solid #16e264;
+  }
+  .invalid{
+    border-bottom: 2px solid #e23f16;
+  }
+  .box-signup-btn{
+    text-align: center;
+  }
+  .signup-btn{
+    background: linear-gradient(#2f3776,#382e63 55%);
+    opacity: 0.95;
+    width: 180px;
+    height: 55px;
+    border: none;
+    border-radius: 30px;
+    color: #fff;
+    font-size: 13px;
+    margin-top: 15px;
+    cursor: pointer;
+  }
+  .signup-btn:hover{
+    opacity: 1;
+  }
+  /*   блок картинка */
+  .signup-image{
+    width: 44%;
+  }
+  .signup-image__item{
+    width: 100%;
+  }
+  /*   блок галки */
+  .block-success{
+    background: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 56%;
+    text-align: center;
+    padding-top: 35vh;
+    display: none;
+  }
+  .box-success{
+    background: none;
+    margin: 0 auto;
+  }
+  .box-success__img{
+    background: none;
+    width: 30%;
+    max-width: 200px;
+  }
+  
+  /*            анимация */
+  /* step 1  плавно скрывается форма. появляется и исчезает галка, рокета на весь экран*/
+  .sign-up-success-step1 .signup-content{
+    animation: content-hide 3000ms;
+  }
+  .sign-up-success-step1 .block-success{
+    display: block;
+    opacity: 0;
+    animation: success 3000ms;
+  }
+  .sign-up-success-step1 .signup-image{
+    animation: image-full 3000ms;
+  }
+  
+  @keyframes content-hide {
+    20% {
+     opacity: 0;
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+  @keyframes success {
+    15% {
+     display: 1;
+    }
+    40% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+  @keyframes image-full {
+    0% {
+      position: absolute;
+      right: 0;
+    }
+    50% {
+      width: 44%;
+    }
+    75% {
+      width: 100%;
+    }
+    100% {
+      position: absolute;
+      width: 100%;
+      right: 0;
+    }
+  }
+  /* step 2 полностью исчезают форма и галка, рокета остается на весь экран */
+  .sign-up-success-step2 .signup-content{
+    display: none;
+  }
+  .sign-up-success-step2 .block-success{
+    display: none;
+  }
+  .sign-up-success-step2 .signup-image{
+    position: absolute;
+    width: 100%;
+  }
+  
+  @media screen and (max-width: 1000px){
+    .page-sign-up{
+      display: block;
+      width: 100%;
+      margin: 0 auto;
+    }
+    .signup-content{
+      margin: 0 auto;
+      width: 60%;
+      height: 700px;
+      min-width: 450px;
+    }
+    .signup-image{
+      width: 100%;
+    }
+    .signup-content{
+      padding-top: 10%;
+    }
+  
+    /*            анимация  здесь после скрытия, форма уменьшается по высоте*/
+    .sign-up-success-step1 .block-success{
+      padding-top: 25vh;
+      width: 100%;
+    }
+    .sign-up-success-step1 .signup-image{
+      animation: none;
+    }
+    @keyframes content-hide {
+      20% {
+       opacity: 0;
+      }
+      50% {
+        height: 650px;
+        padding: 8% 10% 8% 5%;
+      }
+      80% {
+        height: 0px;
+        padding: 0px;
+      }
+      100%{
+        opacity: 0;
+        height: 0px;
+        padding: 0px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 500px){
+    .page-sign-up{
+      width: 95%;
+      min-width: 0;
+    }
+    .signup-content{
+      padding: 10% 1%;
+      width: 100%;
+      min-width: 0;
+    }
+  
+  }
