@@ -31,7 +31,7 @@ const SignUp = (props) => {
         props.createUser(userInformarion);
         console.log(props.users);
         setpageSignUpClass('page-sign-up sign-up-success-step1');
-        setTimeout(()=> setpageSignUpClass('page-sign-up sign-up-success-step2'), 2400);
+        setTimeout(()=> setpageSignUpClass('page-sign-up'), 4800);
     }
 
     return (
@@ -110,6 +110,8 @@ const SignUp = (props) => {
             <div className="block-success">
                 <div className="box-success">
                     <img className="box-success__img" src="/img/success.png" alt=""/>
+                    <p className="box-success__text">Thank you for your registering!</p> 
+                    <a className="box-success__link-back" href="#" onclick="history.back();">Back</a>  
                 </div>
             </div>
             <div className="signup-image">
